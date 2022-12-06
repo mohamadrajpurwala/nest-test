@@ -20,4 +20,6 @@ export class Workshop {
 
   @Column({ type: 'datetime' })
   createdAt: string;
+
+  @ManyToOne(type => Event, event => event.workshops) event: Event; 
 }

@@ -85,7 +85,8 @@ export class MenuItemsService {
         }
     ]
   */
-  async getMenuItems() {
-    throw new Error('TODO in task 3');
+    
+    async getMenuItems() {
+        return this.menuItemRepository.createQueryBuilder('menuItems').leftJoinAndSelect('menuItems.children', 'children').getMany();
   }
 }

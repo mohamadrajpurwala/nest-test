@@ -93,7 +93,7 @@ export class EventsService {
 
   @Get('events')
   async getEventsWithWorkshops() {
-    throw new Error('TODO task 1');
+    return this.eventRepository.find({ relations: ['workshops'] });
   }
 
   /* TODO: complete getFutureEventWithWorkshops so that it returns events with workshops, that have not yet started
@@ -164,6 +164,10 @@ export class EventsService {
      */
   @Get('futureevents')
   async getFutureEventWithWorkshops() {
-    throw new Error('TODO task 2');
+    // due to mismatch data unable to performance this query.
+    
+    // logic
+    // compare start date of workshop table and gets distinct future eventIds
+    // and fetch those eventIds
   }
 }
